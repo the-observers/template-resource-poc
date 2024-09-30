@@ -25,3 +25,10 @@ rules:
   - pocthings/status
   verbs:
   - get
+- apiGroups:
+  - the-observers.world
+  resources:
+  - poctemplate
+  verbs:
+  - get
+  - list

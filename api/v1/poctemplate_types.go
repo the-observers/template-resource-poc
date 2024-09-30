@@ -17,20 +17,12 @@ limitations under the License.
 package v1
 
 import (
+	appsv1 "k8s.io/api/apps/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
-
-// PocTemplateSpec defines the desired state of PocTemplate
-type PocTemplateSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of PocTemplate. Edit poctemplate_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
-}
 
 // PocTemplateStatus defines the observed state of PocTemplate
 type PocTemplateStatus struct {
@@ -46,8 +38,8 @@ type PocTemplate struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   PocTemplateSpec   `json:"spec,omitempty"`
-	Status PocTemplateStatus `json:"status,omitempty"`
+	Spec   appsv1.DeploymentSpec `json:"spec,omitempty"`
+	Status PocTemplateStatus     `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true

@@ -1,0 +1,59 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.1
+  name: pocthings.the-observers.world
+spec:
+  group: the-observers.world
+  names:
+    kind: PocThing
+    listKind: PocThingList
+    plural: pocthings
+    singular: pocthing
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: PocThing is the Schema for the pocthings API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PocThingSpec defines the desired state of PocThing
+            properties:
+              demo:
+                description: |-
+                  Demo showcases a template override field, in this case it will just set
+                  a metadata field
+                type: string
+              template:
+                description: Template specifies which PocTemplate to use by name in
+                  the same namespace
+                type: string
+            type: object
+          status:
+            description: PocThingStatus defines the observed state of PocThing
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

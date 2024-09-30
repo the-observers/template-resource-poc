@@ -28,8 +28,11 @@ type PocThingSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of PocThing. Edit pocthing_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Template specifies which PocTemplate to use by name in the same namespace
+	Template string `json:"template,omitempty"`
+	// Demo showcases a template override field, in this case it will just set
+	// a metadata field
+	Demo string `json:"demo,omitempty"`
 }
 
 // PocThingStatus defines the observed state of PocThing

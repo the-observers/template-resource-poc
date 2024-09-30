@@ -6,4 +6,5 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: pocthing-sample
 spec:
-  # TODO(user): Add fields here
+  template: poctemplate-sample
+  demo: this-is-a-test
