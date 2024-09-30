@@ -1,0 +1,5 @@
+## Append samples of your project ##
+resources:
+- v1_pocthing.yaml
+- v1_poctemplate.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

@@ -1,0 +1,9 @@
+apiVersion: the-observers.world/v1
+kind: PocThing
+metadata:
+  labels:
+    app.kubernetes.io/name: template-resource-poc
+    app.kubernetes.io/managed-by: kustomize
+  name: pocthing-sample
+spec:
+  # TODO(user): Add fields here
